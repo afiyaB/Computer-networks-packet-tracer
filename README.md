@@ -2,63 +2,96 @@
 
 This repository contains two Computer Networks implementations developed using **Cisco Packet Tracer**.
 
-## Implementations
+---
 
-### 1. ARP Implementation and Simulation
+## 1. ARP Implementation and Simulation
 
-This project demonstrates how **Address Resolution Protocol (ARP)** maps an IP address to its corresponding MAC address within a LAN.
+### Overview
 
-**Components used:**
+This implementation demonstrates the **Address Resolution Protocol (ARP)**, which maps a known IP address to its corresponding MAC address within a LAN.
 
-* PC0, PC1, PC2
+### Network Topology
+
+![ARP Simulation](ARP-Simulation/arp-simulation.png)
+
+### Components
+
+* PC0
+* PC1
+* PC2
 * Server0
 * 2960 Switch
-* IP network: `192.168.11.0/24`
+* Subnet: `192.168.11.0/24`
 
-**Process demonstrated:**
+### Working
 
-* ARP Request broadcast
-* Switch broadcast flooding
-* ARP Reply from the destination device
-* ARP table update
-* Successful ping communication
+1. PC0 sends a ping request to Server0.
+2. PC0 checks its ARP table.
+3. If the MAC address is not available, PC0 broadcasts an ARP Request.
+4. The switch forwards the broadcast to the connected devices.
+5. Server0 sends an ARP Reply containing its MAC address.
+6. PC0 updates its ARP table.
+7. Communication is completed successfully.
 
-### 2. LAN-to-LAN WAN Communication
+### Result
 
-This project demonstrates communication between two separate LANs through a **WAN connection** using Cisco Packet Tracer.
+The simulation successfully demonstrates ARP request broadcasting, ARP reply generation, ARP table updating, and successful ping communication.
 
-**Components used:**
+---
 
-* Two routers
-* Two switches
-* PCs
+## 2. LAN-to-LAN WAN Communication
+
+### Overview
+
+This implementation demonstrates communication between two separate LANs using a **WAN connection** in Cisco Packet Tracer.
+
+### Network Topology
+
+![LAN-to-LAN WAN Communication](LAN-to-LAN-WAN-Communication/wan-communication.png)
+
+### Components
+
+* Router A
+* Router B
+* Switch A
+* Switch B
+* PC A
+* PC B
 * Serial WAN connection
-* LAN and WAN IP addressing
 
-**Network structure:**
+### Network Structure
 
-* Site A: `192.168.1.0/24`
-* Site B: `192.168.2.0/24`
-* WAN: `10.0.0.0/30`
+**Site A LAN:** `192.168.1.0/24`
 
-**Process demonstrated:**
+**Site B LAN:** `192.168.2.0/24`
 
-* IP addressing
-* Router configuration
-* WAN serial connection
-* Static/dynamic routing
-* Packet forwarding between LANs
-* Successful end-to-end communication
+**WAN Link:** `10.0.0.0/30`
+
+### Working
+
+1. IP addresses are assigned to the PCs.
+2. Router interfaces are configured.
+3. The WAN serial connection is established.
+4. Routing is configured.
+5. Packets are forwarded from one LAN to the other through the routers.
+6. Connectivity is verified using ping.
+
+### Result
+
+The simulation successfully achieved end-to-end communication between the two LANs. Packet forwarding through the routers and WAN link was observed in Cisco Packet Tracer.
+
+---
 
 ## Tools Used
 
 * Cisco Packet Tracer
-* Computer Networks concepts
 * IPv4
 * ARP
 * IP Addressing
 * Routing
 * WAN Communication
+
+---
 
 ## Repository Structure
 
@@ -66,19 +99,28 @@ This project demonstrates communication between two separate LANs through a **WA
 Computer-Networks-Implementations/
 │
 ├── ARP-Simulation/
-│   └── ARP_Simulation.pkt
+│   ├── ARP_Simulation.pkt
+│   └── arp-simulation.png
 │
 ├── LAN-to-LAN-WAN-Communication/
-│   └── LAN_to_LAN_WAN.pkt
+│   ├── LAN_to_LAN_WAN.pkt
+│   └── wan-communication.png
 │
 └── README.md
 ```
 
-## Result
+---
 
-Both implementations were successfully simulated in Cisco Packet Tracer. The ARP simulation demonstrated IP-to-MAC address resolution, while the WAN simulation demonstrated successful communication between two separate LANs through routers.
+## Conclusion
+
+Both Computer Networks implementations were successfully simulated using Cisco Packet Tracer.
+
+* **ARP Simulation:** Demonstrates IP-to-MAC address resolution within a LAN.
+* **LAN-to-LAN WAN:** Demonstrates communication between two separate LANs through a WAN connection.
 
 ## Author
 
 **Afiya Babarchi**
-B.E. – Computer Science & Engineering (Artificial Intelligence & Machine Learning)
+
+B.E. – Computer Science & Engineering
+Artificial Intelligence & Machine Learning
